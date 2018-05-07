@@ -33,7 +33,7 @@ Ensure that in each scenario the drone looks stable and performs the required ta
 
 ## Scenario ##
 
-### Scenario 1 ###
+### Intro (scenario 1) ###
 
 ### Body rate and roll/pitch control (scenario 2) ###
 
