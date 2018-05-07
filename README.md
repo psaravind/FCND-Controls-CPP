@@ -41,7 +41,7 @@ Ensure that in each scenario the drone looks stable and performs the required ta
 
 ### Non-idealities and robustness (scenario 4) ###
 
-### ### Tracking trajectories (scenario 5) ###
+### Tracking trajectories (scenario 5) ###
 
 ### Extra Challenge 1 ###
 
