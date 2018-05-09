@@ -43,7 +43,7 @@ Simulation #56 (../config/2_AttitudeControl.txt)
 PASS: ABS(Quad.Roll) was less than 0.025000 for at least 0.750000 seconds
 PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
 
-![./animations/Scenario_2.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_2.gif).
+![./animations/Scenario_2.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_2.gif).
 
 ### Position/velocity and yaw angle control (scenario 3) ###
 Simulation #169 (../config/3_PositionControl.txt)
@@ -55,7 +55,7 @@ PASS: ABS(Quad1.Pos.X) was less than 0.100000 for at least 1.250000 seconds
 PASS: ABS(Quad2.Pos.X) was less than 0.100000 for at least 1.250000 seconds
 PASS: ABS(Quad2.Yaw) was less than 0.100000 for at least 1.000000 seconds
 
-![./animations/Scenario_3.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_3.gif).
+![./animations/Scenario_3.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_3.gif).
 
 ### Non-idealities and robustness (scenario 4) ###
 
@@ -68,7 +68,7 @@ PASS: ABS(Quad1.PosFollowErr) was less than 0.100000 for at least 1.500000 secon
 PASS: ABS(Quad2.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
 PASS: ABS(Quad3.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
 
-![./animations/Scenario_4.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_4.gif).
+![./animations/Scenario_4.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_4.gif).
 
 ### Tracking trajectories (scenario 5) ###
 
@@ -79,14 +79,14 @@ PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 secon
 Simulation #187 (../config/5_TrajectoryFollow.txt)
 PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
 
-![./animations/Scenario_5.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_5.gif).
+![./animations/Scenario_5.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_5.gif).
 
 ### Extra Challenge 1 ###
 
 Simulation #198 (../config/X_TestManyQuads.txt)
 Simulation #199 (../config/X_TestManyQuads.txt)
 
-![./animations/Scenario_Extra1.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_Extra1.gif).
+![./animations/Scenario_Extra1.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_Extra1.gif).
 
 ### Extra Challenge 2 ###
 
@@ -95,7 +95,7 @@ PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 secon
 Simulation #194 (../config/X_TestMavlink.txt)
 PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
 
-![./animations/Scenario_Extra2.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_Extra2.gif).
+![./animations/Scenario_Extra2.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_Extra2.gif).
 
 ## Simulator Walkthrough ##
 
