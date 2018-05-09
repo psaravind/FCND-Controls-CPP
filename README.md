@@ -2,50 +2,100 @@
 
 ## Implemented body rate control ##
 
-The controller should be a proportional controller on body rates to commanded moments. The controller should take into account the moments of inertia of the drone when calculating the commanded moments.
+The body rate control is implemented in [./src/QuadControl.cpp:L96-L123](https://github.com/psaravind/FCND-Controls-CPP/blob/037a2457f28f50ff448c39d37a2c0c1aff35779c/src/QuadControl.cpp#L96-L123).  The BodyRateControl() method implements the proportional control on body rates to commanded moments taking into account the moments of inertia of the drone when calculating the commanded moments.
 
 ## Implement roll pitch control ##
 
-The controller should use the acceleration and thrust commands, in addition to the vehicle attitude to output a body rate command. The controller should account for the non-linear transformation from local accelerations to body rates. Note that the drone's mass should be accounted for when calculating the target angles.
+The roll pitch control is implemented in [./src/QuadControl.cpp:L126-L166](https://github.com/psaravind/FCND-Controls-CPP/blob/037a2457f28f50ff448c39d37a2c0c1aff35779c/src/QuadControl.cpp#L126-L166). The RollPitchControl() method uses the acceleration, thrust and vehicle attitude to output a body rate command.  The controller takes into accoun the non-linear transformation from location accelerations to body rates.  Drone's mass are accounted when calculating the target angles.
 
 ## Implement altitude controller ##
 
-The controller should use both the down position and the down velocity to command thrust. Ensure that the output value is indeed thrust (the drone's mass needs to be accounted for) and that the thrust includes the non-linear effects from non-zero roll/pitch angles.
-
-Additionally, the C++ altitude controller should contain an integrator to handle the weight non-idealities presented in scenario 4.
+The altitude control is implemented in [./src/QuadControl.cpp:L168-LL210](https://github.com/psaravind/FCND-Controls-CPP/blob/037a2457f28f50ff448c39d37a2c0c1aff35779c/src/QuadControl.cpp#L168-L210).  The AltitudeControl() method uses the both position and velocity to command thrust.  It takes into account the mass of the drone and the thrust includes the non-linear effects from non-zero roll/pitch angles.  It also uses a integrated altitude controller to handle the weight dasdfasfasdfa.
 
 ## Implement lateral position control ##
 
-The controller should use the local NE position and velocity to generate a commanded local acceleration.
+The lateral position control is implemented in [./src/QuadControl.cpp:L213-L253](https://github.com/psaravind/FCND-Controls-CPP/blob/037a2457f28f50ff448c39d37a2c0c1aff35779c/src/QuadControl.cpp#L213-L253).  The LateralPositionControl() method uses local position to generate a commanded local acceleration.
 
 ## Implement yaw control ##
 
-The controller can be a linear/proportional heading controller to yaw rate commands (non-linear transformation not required).
-
-Implement calculating the motor commands given commanded thrust and moments in C++.
-
-The thrust and moments should be converted to the appropriate 4 different desired thrust forces for the moments. Ensure that the dimensions of the drone are properly accounted for when calculating thrust from moments.
+The yaw control is implemented in [./src/QuadControl.cpp:L256-L284](https://github.com/psaravind/FCND-Controls-CPP/blob/037a2457f28f50ff448c39d37a2c0c1aff35779c/src/QuadControl.cpp#L256-L284).  The YawControl() method 
 
 ## Flight Evaluation ##
-Your C++ controller is successfully able to fly the provided test trajectory and visually passes inspection of the scenarios leading up to the test trajectory.
 
-Ensure that in each scenario the drone looks stable and performs the required task. Specifically check that the student's controller is able to handle the non-linearities of scenario 4 (all three drones in the scenario should be able to perform the required task with the same control gains used).
+The C++ controller is able to complete all the test scenarios without any failures.  Results along with the images are provided for each test scenario.
 
 ## Scenario ##
 
 ### Intro (scenario 1) ###
 
+Simulation #20 (../config/1_Intro.txt)
+PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
+Simulation #21 (../config/1_Intro.txt)
+PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
+
+[./animations/Scenario1.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario1.mp4).
+
 ### Body rate and roll/pitch control (scenario 2) ###
+Simulation #55 (../config/2_AttitudeControl.txt)
+PASS: ABS(Quad.Roll) was less than 0.025000 for at least 0.750000 seconds
+PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
+Simulation #56 (../config/2_AttitudeControl.txt)
+PASS: ABS(Quad.Roll) was less than 0.025000 for at least 0.750000 seconds
+PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
+
+[./animations/Scenario2.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario2.mp4).
 
 ### Position/velocity and yaw angle control (scenario 3) ###
+Simulation #169 (../config/3_PositionControl.txt)
+PASS: ABS(Quad1.Pos.X) was less than 0.100000 for at least 1.250000 seconds
+PASS: ABS(Quad2.Pos.X) was less than 0.100000 for at least 1.250000 seconds
+PASS: ABS(Quad2.Yaw) was less than 0.100000 for at least 1.000000 seconds
+Simulation #170 (../config/3_PositionControl.txt)
+PASS: ABS(Quad1.Pos.X) was less than 0.100000 for at least 1.250000 seconds
+PASS: ABS(Quad2.Pos.X) was less than 0.100000 for at least 1.250000 seconds
+PASS: ABS(Quad2.Yaw) was less than 0.100000 for at least 1.000000 seconds
+
+[./animations/Scenario3.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario3.mp4).
 
 ### Non-idealities and robustness (scenario 4) ###
 
+Simulation #178 (../config/4_Nonidealities.txt)
+PASS: ABS(Quad1.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+PASS: ABS(Quad2.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+PASS: ABS(Quad3.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+Simulation #179 (../config/4_Nonidealities.txt)
+PASS: ABS(Quad1.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+PASS: ABS(Quad2.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+PASS: ABS(Quad3.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+
+[./animations/Scenario4.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario4.mp4).
+
 ### Tracking trajectories (scenario 5) ###
+
+Simulation #185 (../config/5_TrajectoryFollow.txt)
+PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
+Simulation #186 (../config/5_TrajectoryFollow.txt)
+PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
+Simulation #187 (../config/5_TrajectoryFollow.txt)
+PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
+
+[./animations/Scenario5.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario5.mp4).
 
 ### Extra Challenge 1 ###
 
+Simulation #198 (../config/X_TestManyQuads.txt)
+Simulation #199 (../config/X_TestManyQuads.txt)
+
+[./animations/Scenario_Extra1.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_Extra1.mp4).
+
 ### Extra Challenge 2 ###
+
+Simulation #193 (../config/X_TestMavlink.txt)
+PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
+Simulation #194 (../config/X_TestMavlink.txt)
+PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
+
+[./animations/Scenario_Extra2.mp4](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_Extra2.mp4).
 
 ## Simulator Walkthrough ##
 
