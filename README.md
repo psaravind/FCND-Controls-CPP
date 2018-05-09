@@ -33,7 +33,7 @@ PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 second
 Simulation #21 (../config/1_Intro.txt)
 PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
 
-![./animations/Scenario_1.gif](https://github.com/psaravind/FCND-Controls-CPP/animations/Scenario_1.gif).
+![./animations/Scenario_1.gif](https://github.com/psaravind/FCND-Controls-CPP/blob/master/animations/Scenario_1.gif).
 
 ### Body rate and roll/pitch control (scenario 2) ###
 Simulation #55 (../config/2_AttitudeControl.txt)
